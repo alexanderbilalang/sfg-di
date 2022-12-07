@@ -1,6 +1,6 @@
 package guru.springframework.sfgdi.controllers;
 
-import guru.springframework.sfgdi.services.GreetingsServiceImpl;
+import guru.springframework.sfgdi.services.PropertyGreetingsServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +15,7 @@ class PropertyInjectedControllerTest {
     void setUp() {
         controller = new PropertyInjectedController();
 
-        controller.greetingsService = new GreetingsServiceImpl();
+        controller.greetingsService = new PropertyGreetingsServiceImpl();
     }
 
     @Test

@@ -1,8 +1,8 @@
 package guru.springframework.sfgdi.controllers;
 
 import guru.springframework.sfgdi.services.GreetingsService;
-import guru.springframework.sfgdi.services.GreetingsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -11,8 +11,9 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class PropertyInjectedController {
 
+    @Qualifier("propertyGreetingsServiceImpl")
     @Autowired
-    GreetingsService greetingsService;
+    public GreetingsService greetingsService;
 
     public String getGreeting() {
         return greetingsService.getGreetings();

@@ -1,7 +1,8 @@
 package guru.springframework.sfgdi.controllers;
 
 import guru.springframework.sfgdi.services.GreetingsService;
-import guru.springframework.sfgdi.services.GreetingsServiceImpl;
+import guru.springframework.sfgdi.services.ConstructorGreetingsServiceImpl;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -12,7 +13,7 @@ public class ConstructorInjectedController {
 
     private final GreetingsService greetingsService;
 
-    public ConstructorInjectedController(GreetingsServiceImpl greetingsService) {
+    public ConstructorInjectedController(@Qualifier("constructorGreetingsServiceImpl") GreetingsService greetingsService) {
         this.greetingsService = greetingsService;
     }
 

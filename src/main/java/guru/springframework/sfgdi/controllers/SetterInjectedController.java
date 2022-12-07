@@ -1,8 +1,9 @@
 package guru.springframework.sfgdi.controllers;
 
 import guru.springframework.sfgdi.services.GreetingsService;
-import guru.springframework.sfgdi.services.GreetingsServiceImpl;
+import guru.springframework.sfgdi.services.ConstructorGreetingsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -14,7 +15,7 @@ public class SetterInjectedController {
     GreetingsService greetingsService;
 
     @Autowired
-    public void setGreetingsService(GreetingsServiceImpl greetingsService) {
+    public void setGreetingsService(@Qualifier("setterGreetingsServiceImpl") GreetingsService greetingsService) {
         this.greetingsService = greetingsService;
     }
 

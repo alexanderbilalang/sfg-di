@@ -1,7 +1,5 @@
 package com.springframework.pets.services;
 
-import org.springframework.stereotype.Service;
-
 /**
  * @author alexander on 08/12/2022
  */

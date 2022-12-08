@@ -2,6 +2,7 @@ package guru.springframework.sfgdi;
 
 import com.springframework.pets.controllers.PetController;
 import guru.springframework.sfgdi.controllers.*;
+import guru.springframework.sfgdi.datasource.TempDataSource;
 import guru.springframework.sfgdi.services.PrototypeBean;
 import guru.springframework.sfgdi.services.SingletonBean;
 import org.springframework.boot.SpringApplication;
@@ -51,6 +52,11 @@ public class SfgDiApplication {
         System.out.println(prototypeBean1.getMyScope());
         PrototypeBean prototypeBean2 = ctx.getBean(PrototypeBean.class);
         System.out.println(prototypeBean2.getMyScope());
+
+        TempDataSource dataSource = ctx.getBean(TempDataSource.class);
+        System.out.println(dataSource.getUsername());
+        System.out.println(dataSource.getPassword());
+        System.out.println(dataSource.getJdbcUrl());
     }
 
 }

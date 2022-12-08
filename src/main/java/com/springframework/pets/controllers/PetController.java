@@ -1,6 +1,7 @@
 package com.springframework.pets.controllers;
 
 import com.springframework.pets.services.PetService;
+import com.springframework.pets.services.PetServiceFactory;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -9,13 +10,13 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class PetController {
 
-    private final PetService petService;
+    private final PetServiceFactory petService;
 
-    public PetController(PetService petService) {
+    public PetController(PetServiceFactory petService) {
         this.petService = petService;
     }
 
     public String whichPetIsTheBest(){
-        return petService.getPetType();
+        return petService.getPetService("cat").getPetType();
     }
 }

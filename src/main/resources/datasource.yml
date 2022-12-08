@@ -1,0 +1,4 @@
+guru:
+  username: tempUsername
+  password: tempPassword
+  jdbcUrl: tempJdbcUrl

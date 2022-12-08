@@ -1,0 +1,35 @@
+spring:
+  profiles:
+    active:
+      - cat # means list (can use comma separated , or dash - )
+      - ES
+      - prod
+
+guru:
+  username: tempUsername
+  password: tempPassword
+  jdbcUrl: tempJdbcUrl
+
+--- #means another yml file
+spring:
+  profiles: dev
+guru:
+  username: tempDevUsername
+  password: tempDevPassword
+  jdbcUrl: tempDevJdbcUrl
+
+---
+spring:
+  profiles: qa
+guru:
+  username: tempQaUsername
+  password: tempQaPassword
+  jdbcUrl: tempQaJdbcUrl
+
+---
+spring:
+  profiles: prod
+guru:
+  username: tempProdUsername
+  password: tempProdPassword
+  jdbcUrl: tempProdJdbcUrl

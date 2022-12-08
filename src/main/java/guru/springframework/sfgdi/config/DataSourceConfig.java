@@ -9,7 +9,7 @@ import org.springframework.context.annotation.PropertySource;
 /**
  * @author alexander on 08/12/2022
  */
-@PropertySource("classpath:datasource.properties")
+@PropertySource("classpath:datasource.yml")
 @Configuration
 public class DataSourceConfig {
 

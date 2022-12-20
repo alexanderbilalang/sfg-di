@@ -1,6 +1,7 @@
 package guru.springframework.sfgdi;
 
 import com.springframework.pets.controllers.PetController;
+import guru.springframework.sfgdi.config.SfgConfiguration;
 import guru.springframework.sfgdi.controllers.*;
 import guru.springframework.sfgdi.datasource.TempDataSource;
 import guru.springframework.sfgdi.services.PrototypeBean;
@@ -57,6 +58,12 @@ public class SfgDiApplication {
         System.out.println(dataSource.getUsername());
         System.out.println(dataSource.getPassword());
         System.out.println(dataSource.getJdbcUrl());
+
+        System.out.println("--------- Configuration Props Bean -------");
+        SfgConfiguration sfgConfiguration = ctx.getBean(SfgConfiguration.class);
+        System.out.println(sfgConfiguration.getUsername());
+        System.out.println(sfgConfiguration.getPassword());
+        System.out.println(sfgConfiguration.getJdbcUrl());
     }
 
 }
